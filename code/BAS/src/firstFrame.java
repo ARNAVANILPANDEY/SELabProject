@@ -7,13 +7,13 @@ public class firstFrame
 {
     public static void main(String[] args)
     {
-        utils obj= new utils("    Employee");
+        utils obj= new utils("    Employee","      Name");
     }
 }
 
 class utils extends JFrame
 {
-    public utils(String str)
+    public utils(String str,String empName)
     {
         JPanel p=new JPanel(new GridBagLayout());
         JPanel p2=new JPanel(new GridBagLayout());
@@ -69,6 +69,50 @@ class utils extends JFrame
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
+            }
+        });
+
+        b2.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent actionEvent)
+            {
+                try {
+                    new ReqBook();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+        b3.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent actionEvent)
+            {
+                try {
+                    new CancelRequest();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+        b4.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent actionEvent)
+            {
+                try {
+                    new billFrame(str,empName);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+        b5.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent actionEvent)
+            {
+                new updateInventory();
             }
         });
 

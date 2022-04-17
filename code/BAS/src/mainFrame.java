@@ -39,6 +39,7 @@ class login extends JFrame
             employee temp=new employee();
             temp.empID= rs.getString("empID");
             temp.pass=rs.getString("empPass");
+            temp.empName=rs.getString("empName");
             empList.addElement(temp);
 
         }
@@ -77,7 +78,7 @@ class login extends JFrame
                 }
                 if (ind==1)
                 {
-                    new utils(temp.empID);
+                    new utils(temp.empID,temp.empName);
                 }
                 else
                 {
