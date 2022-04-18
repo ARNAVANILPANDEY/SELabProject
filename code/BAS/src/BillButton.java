@@ -34,6 +34,8 @@ class billFrame extends JFrame
     public billFrame(String empID, String empName)
     {
         Vector<Item>v=new Vector<Item>();
+        final Float[] amtPayable = {0F};
+        Integer iter=0;
         bill Bill=new bill(empID,String.valueOf(java.time.LocalDate.now()),empName,v,25,0F);
 
         JPanel p=new JPanel(new GridBagLayout());
@@ -47,6 +49,7 @@ class billFrame extends JFrame
         JLabel l1=new JLabel("Issuer ID: "+empID);
         JLabel l2=new JLabel("Issuer Name: "+empName);
         JLabel l3=new JLabel("Date: "+String.valueOf(java.time.LocalDate.now()));
+        JLabel l4=new JLabel("Amount Payable:");
         c.gridx=0;
         c.gridy=0;
         p1.add(l1,c);
@@ -99,6 +102,9 @@ class billFrame extends JFrame
         c3.gridx=0;
         c3.gridy=0;
         p3.add(b1,c3);
+        c3.gridx=1;
+        c3.gridy=0;
+        p3.add(l4,c3);
         c.gridx=0;
         c.gridy=2;
         p.add(p3,c);
@@ -122,10 +128,21 @@ class billFrame extends JFrame
                     //L2.setVisible(false);
                     String str="ISBN: "+s.isbn+"  Name: "+s.bookName+"  Quantity: "+s.quantity+"  Rate: "+s.rate+"  Amount:"+s.amount;
                     JLabel ll=new JLabel(str);
+                    amtPayable[0] +=s.amount;
                     b1.setVisible(false);
+                    l4.setVisible(false);
                     p3.add(ll,c3);
                     c3.gridy++;
                     p3.add(b1,c3);
+                    //c3.gridx=1;
+                    l4.setText("Amount Payable: Rs."+amtPayable[0]+"/-");
+                    GridBagConstraints c4=new GridBagConstraints();
+                    c4.insets=new Insets(0,0,0,0);
+                    c4.gridx=c3.gridx;
+                    c4.gridy=c3.gridy+1;
+                    p3.add(l4,c4);
+                    //c3.gridx=0;
+                    l4.setVisible(true);
                     b1.setVisible(true);
                    // p3.repaint();
 

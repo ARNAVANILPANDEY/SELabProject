@@ -116,6 +116,14 @@ class utils extends JFrame
             }
         });
 
+        b6.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent actionEvent)
+            {
+                new  GenStats();
+            }
+        });
+
         setLayout(new FlowLayout());
         setVisible(true);
         setSize(500, 300);
