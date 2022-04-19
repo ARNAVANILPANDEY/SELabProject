@@ -8,13 +8,13 @@ public class QueryBookButton
 {
     public static void main(String[] args) throws Exception
     {
-        QueryBook qb=new QueryBook();
+        QueryBook qb=new QueryBook("id","name");
     }
 }
 
 class QueryBook extends JFrame
 {
-    public QueryBook() throws Exception
+    public QueryBook(String str,String empName) throws Exception
     {
         JPanel p1=new JPanel(new GridBagLayout());
 
@@ -100,7 +100,9 @@ class QueryBook extends JFrame
         setLayout(new FlowLayout());
         setVisible(true);
         setSize(500, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        new utils(str,empName);
     }
 }
 

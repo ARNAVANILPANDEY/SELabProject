@@ -161,7 +161,9 @@ class billFrame extends JFrame
         setLayout(new FlowLayout());
         setVisible(true);
         setSize(800, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        new utils(empID,empName);
 
     }
 

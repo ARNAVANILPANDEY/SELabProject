@@ -79,6 +79,7 @@ class login extends JFrame
                 if (ind==1)
                 {
                     new utils(temp.empID,temp.empName);
+                    dispose();
                 }
                 else
                 {

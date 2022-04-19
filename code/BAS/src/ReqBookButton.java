@@ -12,14 +12,14 @@ public class ReqBookButton
 {
     public static void main(String[] args)
     {
-        ReqBook rq=new ReqBook();
+        ReqBook rq=new ReqBook("id","name");
 
     }
 }
 
 class ReqBook extends JFrame
 {
-    public ReqBook()
+    public ReqBook(String str,String empName)
     {
 
         JPanel p1=new JPanel(new GridBagLayout());
@@ -92,7 +92,9 @@ class ReqBook extends JFrame
         setLayout(new FlowLayout());
         setVisible(true);
         setSize(800, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        new utils(str,empName);
     }
 
     public void dao(String book_name, String book_author, String client) throws Exception

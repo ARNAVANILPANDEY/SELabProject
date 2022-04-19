@@ -65,7 +65,8 @@ class utils extends JFrame
             public void actionPerformed(ActionEvent actionEvent)
             {
                 try {
-                    new QueryBook();
+                    new QueryBook(str,empName);
+                    dispose();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -77,7 +78,8 @@ class utils extends JFrame
             public void actionPerformed(ActionEvent actionEvent)
             {
                 try {
-                    new ReqBook();
+                    new ReqBook(str,empName);
+                    dispose();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -89,7 +91,8 @@ class utils extends JFrame
             public void actionPerformed(ActionEvent actionEvent)
             {
                 try {
-                    new CancelRequest();
+                    new CancelRequest(str,empName);
+                    dispose();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -102,6 +105,7 @@ class utils extends JFrame
             {
                 try {
                     new billFrame(str,empName);
+                    dispose();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -112,7 +116,8 @@ class utils extends JFrame
         {
             public void actionPerformed(ActionEvent actionEvent)
             {
-                new updateInventory();
+                new updateInventory(str,empName);
+                dispose();
             }
         });
 
@@ -120,7 +125,8 @@ class utils extends JFrame
         {
             public void actionPerformed(ActionEvent actionEvent)
             {
-                new  GenStats();
+                new  GenStats(str,empName);
+                dispose();
             }
         });
 

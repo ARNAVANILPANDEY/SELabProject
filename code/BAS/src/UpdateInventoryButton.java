@@ -10,13 +10,13 @@ public class UpdateInventoryButton
 {
     public static void main(String[] args)
     {
-        updateInventory updInv=new updateInventory();
+        updateInventory updInv=new updateInventory("ID","USER");
     }
 }
 
 class updateInventory extends JFrame
 {
-    public updateInventory()
+    public updateInventory(String str,String empName)
     {
         JRadioButton r1 = new JRadioButton("Add Book");
         JRadioButton r2 = new JRadioButton("Remove Book");
@@ -198,7 +198,9 @@ class updateInventory extends JFrame
         setLayout(new FlowLayout());
         setVisible(true);
         setSize(800, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        new utils(str,empName);
 
 
 

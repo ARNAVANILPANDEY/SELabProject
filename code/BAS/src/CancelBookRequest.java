@@ -13,13 +13,13 @@ public class CancelBookRequest
 {
     public static void main(String[] args)
     {
-        CancelRequest cr=new CancelRequest();
+        CancelRequest cr=new CancelRequest("ID","USER");
     }
 }
 
 class CancelRequest extends JFrame
 {
-    public CancelRequest()
+    public CancelRequest(String str,String empName)
     {
 
         JLabel l1=new JLabel("Book Name");
@@ -99,7 +99,9 @@ class CancelRequest extends JFrame
         setLayout(new FlowLayout());
         setVisible(true);
         setSize(800, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        new utils(str,empName);
     }
 
     public Vector<String> dao(String s) throws Exception
